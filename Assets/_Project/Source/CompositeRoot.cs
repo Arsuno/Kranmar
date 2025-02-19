@@ -6,17 +6,13 @@ namespace _Project.Source
 {
     public class CompositeRoot : MonoBehaviour
     {
-        [Inject] private DiContainer _container;
-        
-        [SerializeField] private PlayerCharacterFactory playerCharacterFactory;
-        
+        [Inject] private IFactory<FirstPersonMovement> _characterFactory;
+        [Inject] private IFactory<ItemUsageHandler> _itemUsageFactory;
+
         private void Awake()
         {
-            var player = playerCharacterFactory.Create();
-            _container.Inject(player);
-            
-            if (player.TryGetComponent(out ItemUsageHandler itemUsageHandler))
-                _container.Inject(itemUsageHandler);
+            var player = _characterFactory.Create();
+            var itemUsageHandler = _itemUsageFactory.Create();
         }
     }
 }

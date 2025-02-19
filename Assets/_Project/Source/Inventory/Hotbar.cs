@@ -9,13 +9,13 @@ namespace _Project.Source.Inventory
 {
     public class Hotbar : MonoBehaviour
     {
-        public event Action<List<HotbarSlot>> OnHotbarChangedEv;
-        public event Action<HotBarItem> OnItemUsedEv;
-
         [SerializeField] private HotbarConfig _config;
+        
         private List<HotbarSlot> _slots;
-
         private int _slotCount;
+        
+        public event Action<List<HotbarSlot>> OnHotbarChanged;
+        public event Action<HotBarItem> OnItemUsed;
     
         private void Start()
         {
@@ -30,7 +30,7 @@ namespace _Project.Source.Inventory
                     _slots[i].AssignItem(_config.StartItems[i]);
             }
             
-            OnHotbarChangedEv?.Invoke(_slots);
+            OnHotbarChanged?.Invoke(_slots);
         }
     
         private void Update()
@@ -51,7 +51,7 @@ namespace _Project.Source.Inventory
                 if (slot.Item == item)
                 {
                     slot.AddItemAmount(amount);
-                    OnHotbarChangedEv?.Invoke(_slots);
+                    OnHotbarChanged?.Invoke(_slots);
                     
                     return;
                 }
@@ -62,8 +62,7 @@ namespace _Project.Source.Inventory
                 if (slot.Item == null)
                 {
                     slot.AssignItem(item);
-                    slot.AddItemAmount(amount);
-                    OnHotbarChangedEv?.Invoke(_slots);
+                    OnHotbarChanged?.Invoke(_slots);
                     
                     return;
                 }
@@ -79,7 +78,7 @@ namespace _Project.Source.Inventory
                 if (slot.Item == item)
                 {
                     slot.RemoveItemAmount(amount);
-                    OnHotbarChangedEv?.Invoke(_slots);
+                    OnHotbarChanged?.Invoke(_slots);
                     
                     return;
                 }
@@ -91,7 +90,7 @@ namespace _Project.Source.Inventory
             if (index < 0 || index >= _slotCount) return;
             
             if (_slots[index].Item != null)
-                OnItemUsedEv?.Invoke(_slots[index].Item);
+                OnItemUsed?.Invoke(_slots[index].Item);
         }
     }
 }

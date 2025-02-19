@@ -15,12 +15,12 @@ namespace _Project.Source.UI
         
         private void OnEnable()
         {
-            _hotbar.OnHotbarChangedEv += Refresh;
+            _hotbar.OnHotbarChanged += Refresh;
         }
 
         private void OnDisable()
         {
-            _hotbar.OnHotbarChangedEv -= Refresh;
+            _hotbar.OnHotbarChanged -= Refresh;
         }
         
         private void Refresh(List<HotbarSlot> slots)
@@ -46,8 +46,6 @@ namespace _Project.Source.UI
 
         private void ClearSlots()
         {
-            Debug.Log(_spawnedSlots.Count);
-            
             foreach (var slot in _spawnedSlots)
                 Destroy(slot.gameObject);
             

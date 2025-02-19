@@ -674,6 +674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 7239117692831970508}
   _equipment: {fileID: 5085848263328453150}
+  _itemUsageHandler: {fileID: 6988932478618192487}
 --- !u!114 &7239117692831970508
 MonoBehaviour:
   m_ObjectHideFlags: 0

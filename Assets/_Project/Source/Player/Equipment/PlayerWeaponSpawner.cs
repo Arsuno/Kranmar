@@ -13,14 +13,14 @@ namespace _Project.Source.Player
 
         private void OnEnable()
         {
-            _playerEquipment.OnWeaponEquippedEv += SpawnWeaponModel;
-            _playerEquipment.OnWeaponUnequippedEv += DestroyWeaponModel;
+            _playerEquipment.OnWeaponEquipped += SpawnWeaponModel;
+            _playerEquipment.OnWeaponUnequipped += DestroyWeaponModel;
         }
 
         private void OnDisable()
         {
-            _playerEquipment.OnWeaponEquippedEv -= SpawnWeaponModel;
-            _playerEquipment.OnWeaponUnequippedEv -= DestroyWeaponModel;
+            _playerEquipment.OnWeaponEquipped -= SpawnWeaponModel;
+            _playerEquipment.OnWeaponUnequipped -= DestroyWeaponModel;
         }
 
         private void SpawnWeaponModel(Weapon weapon)

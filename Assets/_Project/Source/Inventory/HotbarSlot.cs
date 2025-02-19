@@ -11,11 +11,12 @@ namespace _Project.Source.Inventory
         public void AssignItem(HotBarItem item)
         {
             Item = item;
+            ItemAmount = 1;
         }
 
         public void AddItemAmount(int amount)
         {
-            if (Item == null && (Item is Weapon weapon))
+            if (Item == null || Item.StackAmount <= 1)
                 return;
 
             if (ItemAmount < Item.StackAmount)
@@ -38,6 +39,5 @@ namespace _Project.Source.Inventory
                 }
             }
         }
-        
     }
 }

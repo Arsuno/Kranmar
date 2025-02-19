@@ -5,7 +5,7 @@ namespace _Project.Source
 {
     public class Health : MonoBehaviour
     {
-        public event Action<int> HealthChangedEv;
+        public event Action<int> HealthChanged;
         
         [SerializeField] private int _maxValue;
 
@@ -19,7 +19,7 @@ namespace _Project.Source
             if (Value - value > 0)
             {
                 Value -= value;
-                HealthChangedEv?.Invoke(Value);
+                HealthChanged?.Invoke(Value);
             }
         }
 
@@ -30,7 +30,7 @@ namespace _Project.Source
             if (Value + value <= _maxValue)
             {
                 Value += value;
-                HealthChangedEv?.Invoke(Value);
+                HealthChanged?.Invoke(Value);
             }
         }
     }

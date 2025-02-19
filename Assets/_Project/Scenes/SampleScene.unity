@@ -398,7 +398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f6d40c7fee4bf8a499496703b8974e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacterFactory: {fileID: 319887557}
 --- !u!114 &319887557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,9 +410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea376331c44c43c9907cbe568097d0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 114963311885979670, guid: 11aaea5348574644a9eb4f4504fcce3f,
-    type: 3}
-  characterSpawnPoint: {fileID: 37070057}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +788,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3710f9d20417f831ba8474a14a469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 114963311885979670, guid: 11aaea5348574644a9eb4f4504fcce3f,
+    type: 3}
+  characterSpawnPoint: {fileID: 37070057}
   _hotbar: {fileID: 993692835}
 --- !u!1 &722769053
 GameObject:

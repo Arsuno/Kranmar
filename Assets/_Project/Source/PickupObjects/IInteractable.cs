@@ -4,6 +4,6 @@ namespace _Project.Source.PickupObjects
 {
     public interface IInteractable
     {
-        public void Interact(PlayerCharacter player);
+        public void Interact(IItemCollector collector);
     }
 }

@@ -6,21 +6,21 @@ namespace _Project.Source.Player
 {
     public class PlayerEquipment : MonoBehaviour
     {
-        public event Action<Weapon> OnWeaponEquippedEv;
-        public event Action OnWeaponUnequippedEv;
-        
         private Weapon _equippedWeapon;
         
         [SerializeField] private ItemUsageHandler _itemUsageHandler;
+        
+        public event Action<Weapon> OnWeaponEquipped;
+        public event Action OnWeaponUnequipped;
 
         private void OnEnable()
         {
-            _itemUsageHandler.OnWeaponItemUsedEv += EquipWeapon;
+            _itemUsageHandler.OnWeaponItemUsed += EquipWeapon;
         }
 
         private void OnDisable()
         {
-            _itemUsageHandler.OnWeaponItemUsedEv -= EquipWeapon;
+            _itemUsageHandler.OnWeaponItemUsed -= EquipWeapon;
         }
 
         private void EquipWeapon(Weapon weapon)
@@ -32,7 +32,7 @@ namespace _Project.Source.Player
             }
 
             _equippedWeapon = weapon;
-            OnWeaponEquippedEv?.Invoke(weapon);
+            OnWeaponEquipped?.Invoke(weapon);
         }
 
         private void UnequipWeapon()
@@ -40,7 +40,7 @@ namespace _Project.Source.Player
             if (_equippedWeapon == null) return;
             
             _equippedWeapon = null;
-            OnWeaponUnequippedEv?.Invoke();
+            OnWeaponUnequipped?.Invoke();
         }
     }
 }
