@@ -12,6 +12,8 @@ namespace _Project.Source.PickupObjects
         [SerializeField] private BoxCollider _collider;
         [SerializeField] private float _respawnTime;
         
+        public HotBarItem Item => item;
+        
         public void Interact(IItemCollector collector)
         {
             collector.CollectItem(this);

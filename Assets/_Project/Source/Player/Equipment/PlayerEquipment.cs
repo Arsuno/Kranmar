@@ -13,12 +13,12 @@ namespace _Project.Source.Player
         public event Action<Weapon> OnWeaponEquipped;
         public event Action OnWeaponUnequipped;
 
-        private void OnEnable()
+        private void Start()
         {
             _itemUsageHandler.OnWeaponItemUsed += EquipWeapon;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _itemUsageHandler.OnWeaponItemUsed -= EquipWeapon;
         }

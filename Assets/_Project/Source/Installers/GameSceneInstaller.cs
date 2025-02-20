@@ -13,19 +13,25 @@ namespace _Project.Source.Installers
         
         public override void InstallBindings()
         {
-            // Биндим фабрику игрока
-            Container.Bind<IFactory<FirstPersonMovement>>()
-                .To<PlayerCharacterFactory>()
-                .AsSingle()
-                .WithArguments(characterPrefab, characterSpawnPoint, Container);
-
-            // Биндим фабрику ItemUsageHandler
-            Container.Bind<IFactory<ItemUsageHandler>>()
-                .To<ItemUsageHandlerFactory>()
-                .AsSingle();
-
             // Биндим Hotbar
-            Container.Bind<Hotbar>().FromInstance(_hotbar).AsSingle();
+            Container.Bind<Hotbar>().FromInstance(_hotbar).AsSingle().NonLazy();
+            
+            // Создаём экземпляр игрока
+            var playerInstance = Container.InstantiatePrefabForComponent<FirstPersonMovement>(
+                characterPrefab, characterSpawnPoint.position, characterSpawnPoint.rotation, null);
+
+            // Биндим FirstPersonMovement
+            Container.Bind<FirstPersonMovement>().FromInstance(playerInstance).AsSingle();
+
+            // Биндим ItemUsageHandler
+            Container.Bind<ItemUsageHandler>().FromInstance(playerInstance.GetComponent<ItemUsageHandler>()).AsSingle();
+            
+            // Биндим IItemCollector (если FirstPersonMovement — это PlayerCharacter)
+            var playerCharacter = playerInstance.GetComponent<PlayerCharacter>();
+            Container.Bind<IItemCollector>().To<PlayerCharacter>().FromInstance(playerCharacter).AsSingle();
+            
+            var itemPickupHandler = playerInstance.GetComponent<ItemPickupHandler>();
+            Container.Inject(itemPickupHandler);
         }
     }
 }

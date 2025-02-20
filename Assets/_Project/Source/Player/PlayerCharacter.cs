@@ -23,7 +23,8 @@ namespace _Project.Source.Player
 
         public void CollectItem(PickupObject pickupObject)
         {
-            pickupObject.Interact(this);
+            Debug.Log(pickupObject);
+            Hotbar.AddItem(pickupObject.Item, pickupObject.Item.StackAmount);
         }
     }
 }

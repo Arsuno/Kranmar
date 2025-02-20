@@ -363,7 +363,6 @@ GameObject:
   m_Component:
   - component: {fileID: 319887555}
   - component: {fileID: 319887556}
-  - component: {fileID: 319887557}
   m_Layer: 0
   m_Name: EntryPoint
   m_TagString: Untagged
@@ -396,18 +395,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9f6d40c7fee4bf8a499496703b8974e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &319887557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319887554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea376331c44c43c9907cbe568097d0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &410087039
@@ -536,6 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 483747415}
+  - component: {fileID: 483747417}
   - component: {fileID: 483747416}
   m_Layer: 0
   m_Name: AmmoCrateContainer
@@ -572,10 +560,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8df8f7bd7640c0b492bfc346e8994c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  _interactableObject: {fileID: 0}
-  _collider: {fileID: 0}
-  _respawnTime: 0
+  item: {fileID: 11400000, guid: 4bb321d3702756d47bc8c86f36bc141d, type: 2}
+  _interactableObject: {fileID: 876115876}
+  _collider: {fileID: 483747417}
+  _respawnTime: 5
+--- !u!65 &483747417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483747414}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &546245738
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +952,6 @@ GameObject:
   - component: {fileID: 876115877}
   - component: {fileID: 876115880}
   - component: {fileID: 876115879}
-  - component: {fileID: 876115878}
   m_Layer: 0
   m_Name: AmmoCrate
   m_TagString: Untagged
@@ -967,27 +975,6 @@ Transform:
   - {fileID: 1703549241}
   m_Father: {fileID: 483747415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &876115878
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876115876}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &876115879
 MeshRenderer:
   m_ObjectHideFlags: 0

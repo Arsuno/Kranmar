@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: PistolConfig
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 373e4acfef9294e41b71e477740b94bc, type: 3}
+  StackAmount: 1
   AmmoCapacity: 10
   Damage: 1
-  FireRate: 0.33
   ReloadSpeed: 4
+  FireRate: 0.33
   Prefab: {fileID: 6971496768782505918, guid: dfc4d87131163204eb41e8626f81e196, type: 3}
+  ProjectilePrefab: {fileID: 2487687480040664910, guid: 10a2c6218b3d9c74e90828540fb36221,
+    type: 3}

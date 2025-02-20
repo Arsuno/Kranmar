@@ -15,7 +15,7 @@ namespace _Project.Source.Player
         
         public event Action<Weapon> OnWeaponItemUsed; 
 
-        private void Awake()
+        private void Start()
         {
             if (_hotbar != null)
                 _hotbar.OnItemUsed += OnItemUsed;

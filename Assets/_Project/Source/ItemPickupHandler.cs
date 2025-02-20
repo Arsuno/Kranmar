@@ -8,19 +8,22 @@ namespace _Project.Source
     public class ItemPickupHandler : MonoBehaviour
     {
         private IItemCollector _itemCollector;
-
-        [Inject]
+        
+        /*[Inject]
         private void Construct(IItemCollector itemCollector)
         {
             _itemCollector = itemCollector;
-        }
+        }*/
 
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.TryGetComponent(out PickupObject pickupObject))
-            {
-                _itemCollector?.CollectItem(pickupObject);
-            }
+                TryPickup(pickupObject);
+        }
+        
+        private void TryPickup(PickupObject pickupObject)
+        {
+            pickupObject.Interact(_itemCollector);
         }
     }
 }

@@ -6,13 +6,15 @@ namespace _Project.Source
 {
     public class CompositeRoot : MonoBehaviour
     {
-        [Inject] private IFactory<FirstPersonMovement> _characterFactory;
-        [Inject] private IFactory<ItemUsageHandler> _itemUsageFactory;
-
-        private void Awake()
+        private FirstPersonMovement _character;
+        private ItemUsageHandler _itemUsageHandler;
+        
+        [Inject]
+        public void Construct(FirstPersonMovement character, ItemUsageHandler itemUsageHandler)
         {
-            var player = _characterFactory.Create();
-            var itemUsageHandler = _itemUsageFactory.Create();
+            _character = character;
+            _itemUsageHandler = itemUsageHandler;
         }
+        
     }
 }

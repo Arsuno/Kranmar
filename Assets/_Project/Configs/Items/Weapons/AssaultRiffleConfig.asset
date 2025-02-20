@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: AssaultRiffleConfig
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: be5a9ed049cbfe840897fedd83bb1d28, type: 3}
+  StackAmount: 1
   AmmoCapacity: 30
   Damage: 1
-  FireRate: 0.05
   ReloadSpeed: 5
+  FireRate: 0.05
   Prefab: {fileID: 2558141238811818592, guid: 68587b2d9c60944489560cf05cdd1aaf, type: 3}
+  ProjectilePrefab: {fileID: 2487687480040664910, guid: 10a2c6218b3d9c74e90828540fb36221,
+    type: 3}

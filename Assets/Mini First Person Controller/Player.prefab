@@ -536,6 +536,8 @@ GameObject:
   - component: {fileID: 5085848263328453150}
   - component: {fileID: 6768896931406552197}
   - component: {fileID: 6988932478618192487}
+  - component: {fileID: 3772255337874141106}
+  - component: {fileID: 3382528412360032297}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -729,6 +731,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCharacter: {fileID: 2639184580283850438}
+--- !u!114 &3772255337874141106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773623360729482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b463cbb48abf4125af839a55fa008887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponSpawner: {fileID: 6768896931406552197}
+  _camera: {fileID: 20437472682476688}
+  _playerEquipment: {fileID: 5085848263328453150}
+--- !u!114 &3382528412360032297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773623360729482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9462522cc3740af823c9983a6c52b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1963958859065967600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1204,7 @@ Transform:
   m_GameObject: {fileID: 5645950769524458392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.424, y: -0.38600004, z: 0.684}
+  m_LocalPosition: {x: 0.382, y: -0.352, z: 0.684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

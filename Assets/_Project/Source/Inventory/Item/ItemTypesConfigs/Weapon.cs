@@ -10,10 +10,10 @@ namespace _Project.Source.Inventory.Item.ItemTypes
         public int Damage;
         public float ReloadSpeed;
         public GameObject Prefab;
+        public GameObject ProjectilePrefab;
         
         public void Use(PlayerCharacter player)
         {
-            Debug.Log(player);
             player.ItemUsageHandler.UseWeapon(this);
         }
     }
